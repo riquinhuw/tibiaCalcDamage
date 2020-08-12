@@ -5,6 +5,7 @@ const routes = require('./routes');
 require('dotenv/config');
 
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 app.use(routes);
 
 
