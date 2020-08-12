@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de dano - Knight</title>
+</head>
+<body>
+    <h2>Calculadora de dano - Knight</h2>
+    <br> <br>
+    <label for="tipos">Tipo de resultado</label>
+  <select id="tipos" name="tipos">
+    <option value="0.085">Dano Máximo</option>
+    <option value="0.0475">Dano Médio</option>
+  </select>
+  <br><br>
+  <label for="combate">Estilo de combate</label>
+  <select id="combate" name="combate">
+    <option value="1">Full Attack</option>
+    <option value="0.75">Balanced</option>
+    <option value="0.5">Full Def</option>
+  </select>
+    <p>Skill</p>
+    <input id='skill' type="number">
+    <p>ATK da arma</p>
+    <input id='atk' type="number">
+    <p>Level do personagem</p>
+    <input id='level' type="number">
+    <br>
+    <button type="button" id="btnCalcular" onclick='calcularDano()'>Calcular</button>
+    <br>
+    <p id="resposta"></p>
+    <br>
+    <br>
+    <hr> <p class="fundo">Formula de dano por: Pedro Simacek</p>
+         <p class="fundo">Site por: Carlos H</p>
+         <p class="fundo">Criado em: 12/08/2020</p>
+    <script src="./js/index.js"></script>
+</body>
+</html>
