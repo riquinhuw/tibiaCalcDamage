@@ -7,6 +7,7 @@ function calcularDano() {
   var skill = document.getElementById("skill");
   var atk = document.getElementById("atk");
   var level = document.getElementById("level");
+  var armaLv = document.getElementById("armaLv");
   var resposta = document.getElementById("resposta");
 
   var c = tipo.options[tipo.selectedIndex].value;
@@ -14,7 +15,18 @@ function calcularDano() {
   var s = skill.value;
   var a = atk.value;
   var l = level.value;
+  var al = armaLv.value;
 
-  resposta.innerHTML= "Seu dano será:"+(c*f*s*a+(l/5));
+  if(l>al){//Fator requerimento = 1
+    resposta.innerHTML= "Seu dano será:"+(c*f*s*a*1+(l/5));
+  }else{
+    if (Math.abs(al-l)>50) {//Fator requerimento = 1
+      resposta.innerHTML= "Seu dano será:"+(c*f*s*a*0+(l/5));
+    } else {
+      resposta.innerHTML= "Seu dano será:"+(c*f*s*a*(1-0.02*Math.abs(al-l))+(l/5));
+    }
+  }
+
+
   
 }
